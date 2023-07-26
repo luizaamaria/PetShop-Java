@@ -1,14 +1,12 @@
 public class Venda {
-
     private double valor;
-    private String formaPagamento;
+    private String formaPagamento; //virar enum
     private String matricula;
 
     public Venda(double valor, String formaPagamento, String matricula) {
         this.valor = valor;
         this.formaPagamento = formaPagamento;
         this.matricula = matricula;
-
     }
 
     public double getValor() {
@@ -34,4 +32,6 @@ public class Venda {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
+
+
 }
