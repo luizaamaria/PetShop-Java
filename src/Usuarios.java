@@ -8,6 +8,8 @@ public final class Usuarios {
 
     public Usuarios() {
         this.usuarios = new ArrayList<>();
+        Usuario emerson = new Usuario("Emerson", "123456789-00", "123456", "Aluno");
+        usuarios.add(emerson);
     }
 
     public Usuario adicionaUsuario(String nome, String matricula, String senha, String tipo) {
@@ -24,6 +26,17 @@ public final class Usuarios {
             }
         }
         return -1;
+    }
+
+    public Usuario checkCredenciais(String matricula, String senha) {
+        for(int i = 0; i < usuarios.size(); i++) {
+            if (usuarios.get(i).getMatricula().equals(matricula)) {
+                if( usuarios.get(i).getSenha().equals(senha)) {
+                    return usuarios.get(i);
+                }
+            }
+        }
+        return null;
     }
 
     public void removeUsuario(String matricula) {
